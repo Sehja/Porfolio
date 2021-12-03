@@ -1,25 +1,32 @@
 {
-  "name": "myportfolio",
+  "name": "portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Portfolio",
   "main": "index.js",
-  "type": "module",
   "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/main.css -w",
     "devserver": "live-server",
-    "compile:sass": "node-sass scss/main.scss css/main.css",
-    "watch:sass": "node-sass scss/main.scss css/main.css -w",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.css -o css/main.css"
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/main.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/main.comp.css -o css/main.prefix.css",
+    "compress:css": "node-sass css/main.prefix.css css/main.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
   "author": "Gaya",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^10.4.0",
-    "browserslist": "^4.17.6",
-    "live-server": "^1.2.1",
-    "node-sass": "^6.0.1",
-    "postcss-cli": "^9.0.2"
+    "autoprefixer": "^7.1.4",
+    "concat": "^1.0.3",
+    "node-sass": "^4.5.3",
+    "npm-run-all": "^4.1.1",
+    "postcss-cli": "^4.1.1"
   },
-  "dependencies": {
-    "normalize.css": "^8.0.1"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sehja/Porfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sehja/Porfolio/issues"
+  },
+  "homepage": "https://github.com/Sehja/Porfolio#readme"
 }

@@ -1,0 +1,73 @@
+.about {
+    padding: 12rem 0 12rem 0;
+
+
+    &__wrapper {
+        display: grid;
+        grid-column-gap: 7rem;
+        grid-template-rows: repeat(2, max-content);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__img {
+        grid-row: 1/-1;
+    }
+
+    &__title {
+        font-size: 3.6rem
+    }
+
+    &__caption {
+        @include circle-before;
+        font-size: 1.6rem;
+        font-weight: 700;
+        position: relative;
+        padding-left: 1rem;
+
+        &::before {
+            top: -.9rem;
+            left: -.3rem;
+        }
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    &__skills {
+        display: grid;
+        grid-column-gap: 5.8rem;
+        grid-template-columns: repeat(2, minmax(24rem, 1fr));
+    }
+
+    &__item {
+        display: grid;
+        grid-column-gap: 1.2rem;
+        grid-template-columns: 3.6rem 1fr;
+        grid-template-rows: 3.6rem 1fr;
+    }
+
+    &__icon {
+        @include circle-before;
+        position: relative;
+        margin-top: 1.5em;
+        grid-row: 1/-1;
+
+        &::before {
+            content: "";
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+    }
+
+    &__paragraph {
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+    }
+}

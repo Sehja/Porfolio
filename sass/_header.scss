@@ -1,0 +1,112 @@
+.header {
+    background: url(../images/header-bg.jpg) no-repeat 50%/cover;
+    height: 100vh;
+    position: relative;
+}
+
+
+.burger {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    height: 2.1rem;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    cursor: pointer;
+
+    &__span {
+        display: inline-block;
+        background-color: #151812;
+        height: 0.3rem;
+        width: 3rem;
+        transition: all .2s;
+
+        &--big {
+            width: 3.6rem;
+            height: 0.3rem;
+        }
+    }
+
+    &:hover span:first-child {
+        transform: translateY(-30%);
+    }
+
+    &:hover span:last-child {
+        transform: translateY(30%);
+    }
+}
+
+
+
+.promo {
+    padding-top: 20.6rem;
+
+    &__caption {
+        font-size: 1.6rem;
+        font-weight: 700;
+        position: relative;
+        z-index: 3;
+        @include circle-before;
+
+        &::before {
+            transform: translate(-35%, -25%);
+        }
+    }
+
+    &__title {
+        font-size: 4.8rem;
+    }
+
+    &__btn {
+        padding: 1.2rem 2.5rem;
+        font-size: 1.4rem;
+        font-weight: 700;
+
+        &:hover {
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+        }
+    }
+}
+
+.social {
+
+    position: fixed;
+    left: -12rem;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 33.8rem;
+    height: 2.4rem;
+    transform: rotate(-90deg);
+
+    &__text {
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+
+    &__line {
+        background-color: #000000;
+        width: 7rem;
+        height: 1px;
+    }
+
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+        display: inline-block;
+        margin: 0 .4rem;
+
+        path {
+            transition: all .2s;
+        }
+
+        &:hover {
+            path {
+                fill: $main-color;
+            }
+        }
+    }
+}
